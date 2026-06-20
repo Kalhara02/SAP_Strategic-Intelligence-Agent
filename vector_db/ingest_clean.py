@@ -31,23 +31,32 @@ for idx, row in df.iterrows():
     title = str(row.get("title", ""))
     content = str(row.get("content", ""))
 
-    # Avoid duplicate title-content issue
     if title == content:
         text = title
     else:
-        text = title + " " + content
+        text = f"""
+Title:
+{title}
 
-    embedding = model.encode(text).tolist()
+Content:
+{content}
+"""
+
+    embedding = model.encode(
+        text
+    ).tolist()
 
     collection.add(
         ids=[str(idx)],
         documents=[text],
         embeddings=[embedding],
-        metadatas=[{
-            "source": str(row.get("source", "")),
-            "category": str(row.get("category", "")),
-            "url": str(row.get("url", ""))
-        }]
+        metadatas=[
+            {
+                "title": row.get("title", ""),
+                "source": row.get("source", ""),
+                "url": row.get("url", "")
+            }
+        ]
     )
 
 print("Knowledge Repository Created Successfully")
