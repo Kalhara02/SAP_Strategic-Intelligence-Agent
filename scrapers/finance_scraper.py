@@ -2,7 +2,7 @@ import feedparser
 import pandas as pd
 
 feeds = [
-    "https://finance.yahoo.com/rss/headline?s=SAP"
+    "https://www.artificialintelligence-news.com/feed/"
 ]
 
 rows = []
@@ -25,7 +25,7 @@ for feed_url in feeds:
 df = pd.DataFrame(rows)
 
 df.to_csv(
-    "data/AI.csv",
+    "data/yahoo_finance.csv",
     index=False
 )
 print("Collected:", len(df))
