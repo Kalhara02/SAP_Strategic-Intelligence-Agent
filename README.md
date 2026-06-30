@@ -179,20 +179,32 @@ The end-to-end reasoning pipeline:
 ### 🏢 Company Overview
 ![Company Overview](https://via.placeholder.com/1000x520.png?text=Company+Overview)
 
+<img width="1898" height="777" alt="image" src="https://github.com/user-attachments/assets/8bf12d0c-7227-42ac-ae4e-249bbbe820aa" />
+
 ### 📰 Market Intelligence
 ![Market Intelligence](https://via.placeholder.com/1000x520.png?text=Market+Intelligence)
+
+<img width="1906" height="936" alt="image" src="https://github.com/user-attachments/assets/609eeef3-d011-49df-8055-65cd32566237" />
 
 ### 🚀 Opportunity & ⚠️ Risk Monitor
 ![Opportunity and Risk Monitor](https://via.placeholder.com/1000x520.png?text=Opportunity+%26+Risk+Monitor)
 
+<img width="1906" height="1031" alt="image" src="https://github.com/user-attachments/assets/e7252bdc-a899-4a47-bf28-d00ddd07d5de" />
+
 ### 🎯 Strategic Recommendations
 ![Strategic Recommendations](https://via.placeholder.com/1000x520.png?text=Strategic+Recommendations)
+
+<img width="1903" height="1032" alt="image" src="https://github.com/user-attachments/assets/5bf35af2-7b2a-4865-ab52-7b9dde51b07a" />
 
 ### 👔 CEO Briefing
 ![CEO Briefing](https://via.placeholder.com/1000x520.png?text=CEO+Briefing)
 
+<img width="1901" height="1032" alt="image" src="https://github.com/user-attachments/assets/28a5837a-4c34-4fff-bfb4-6d8b3d91b0bd" />
+
 ### 💚 Sentiment Analysis
 ![Sentiment Analysis](https://via.placeholder.com/1000x520.png?text=Sentiment+Analysis)
+
+<img width="1905" height="1030" alt="image" src="https://github.com/user-attachments/assets/e365d348-b716-4936-b8fc-8c626287f604" />
 
 ---
 
@@ -244,26 +256,51 @@ The end-to-end reasoning pipeline:
 ai_ceo_agent/
 │
 ├── agents/
-│   ├── planner.py                  # 🧭 Strategic planning agent
-│   ├── strategic_agent.py          # 🧠 Opportunity / risk / trend detection
 │   ├── decision_engine.py          # ⚖️ Decision logic
-│   ├── validator.py                # ✅ Evidence validation
-│   └── memory.py                   # 🧩 Agent memory
+│   ├── memory.py                   # 🧩 Agent memory
+│   ├── planner.py                  # 🧭 Strategic planning agent
+│   ├── recommendation_service.py   # 🎯 Recommendation generation
+│   ├── strategic_agent.py          # 🧠 Opportunity / risk / trend detection
+│   └── validator.py                # ✅ Evidence validation
+│
+├── chroma_db_clean/                # 🗄️ ChromaDB persistent vector store
 │
 ├── dashboard/
-│   └── new.py                      # 📊 Streamlit dashboard entry point
+│   └── app.py                      # 📊 Streamlit dashboard entry point
 │
-├── data/                           # 🧹 Collected & processed documents
+├── data/
+│   ├── ai_articles.csv             # 🤖 AI / technology news
+│   ├── clean_documents.csv         # 🧹 Cleaned, normalized corpus
+│   ├── finance_articles.csv        # 💰 Finance & market news
+│   ├── google_news_articles.csv    # 📰 General news
+│   ├── master_documents.csv        # 📚 Merged document set
+│   ├── reddit_articles.csv         # 💬 Social / community signal
+│   └── sap_news_articles.csv       # 🏢 Company-specific news
+│
+├── intelligence/
+│   ├── ingest_clean.py             # 📥 Ingests cleaned data into ChromaDB
+│   ├── intelligence_service.py     # 🧭 Strategic intelligence engine
+│   ├── retrieval.py                # 🔎 Semantic retrieval logic
+│   └── sentiment_service.py        # 💚 FinBERT sentiment analysis
+│
+├── preprocessing/
+│   ├── clean_data.py               # 🧹 Cleans & normalizes raw articles
+│   └── merge_files.py              # 🔗 Merges source files into one corpus
+│
+├── scrapers/
+│   ├── ai_news_scraper.py          # 🤖 AI news ingestion
+│   ├── finance_scraper.py          # 💰 Finance news ingestion
+│   ├── google_news_scraper.py      # 📰 General news ingestion
+│   └── reddit_scraper.py           # 💬 Social signal ingestion
 │
 ├── tools/
-│   ├── retrieval_tool.py           # 🔎 ChromaDB retrieval
+│   ├── ceo_tool.py                 # 👔 CEO briefing generation
 │   ├── intelligence_tool.py        # 🧭 Strategic intelligence engine
 │   ├── recommendation_tool.py      # 🎯 Recommendation generation
-│   ├── sentiment_tool.py           # 💚 FinBERT sentiment analysis
-│   └── ceo_tool.py                 # 👔 CEO briefing generation
+│   ├── retrieval_tool.py           # 🔎 ChromaDB retrieval
+│   └── sentiment_tool.py           # 💚 FinBERT sentiment analysis
 │
-├── vector_db/                      # 🗄️ ChromaDB persistent store
-│
+├── .gitignore
 ├── requirements.txt
 └── README.md
 ```
