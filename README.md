@@ -404,18 +404,6 @@ All outputs are generated using a **Retrieval-Augmented Generation (RAG)** pipel
 
 ---
 
-## 🗺️ Future Enhancements
-
-- Live news ingestion
-- Real-time competitor monitoring
-- Automated alert system
-- Predictive trend forecasting
-- Interactive executive reports
-- Multi-company support
-- Cloud deployment
-
----
-
 ## 👤 Author
 
 **Kalhara**
