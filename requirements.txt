@@ -1,0 +1,24 @@
+# Dashboard
+streamlit>=1.32.0
+plotly>=5.20.0
+
+# LLM (local via Ollama)
+ollama>=0.1.8
+
+# Vector database
+chromadb>=0.4.24
+
+# Embeddings
+sentence-transformers>=2.6.1
+
+# Sentiment analysis (FinBERT)
+transformers>=4.39.0
+torch>=2.2.0
+
+# Data processing
+pandas>=2.2.1
+numpy>=1.26.4
+
+# Utilities
+python-dotenv>=1.0.1
+requests>=2.31.0
